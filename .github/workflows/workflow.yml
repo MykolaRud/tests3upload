@@ -1,0 +1,15 @@
+name: Upload to S3
+
+on: [pull_request]
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: test
+          aws_secret_access_key: test
+          aws_bucket: test
+          source_dir: 'dirname'
